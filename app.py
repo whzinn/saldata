@@ -149,6 +149,10 @@ def form():
     ip_address = request.remote_addr
     print(f"O Ip {ip_address} acessou nosso site")
     return render_template('busca.html')
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html')
+
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
