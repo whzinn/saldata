@@ -38,6 +38,7 @@ def barra():
 def creditar(q, uid):
     data = firebase.database()
     qr = data.child("cobrancas").get(uid).val()
+    data.child("cobrancas").child(uid).remove()
     uid = str(uid)
     qr = qr[uid]
     key = qr["key"]
@@ -65,7 +66,7 @@ def receive_webhook():
         pa = get_pay.get_payment_by_id(uid)
         if pa["response"]["status"] == "approved":
             data = firebase.database()
-            data.child("cobrancas").child(uid).remove()
+    
             q = pa["response"]["transaction_amount"]
             creditar(q,uid)
             
