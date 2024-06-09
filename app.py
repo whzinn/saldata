@@ -132,7 +132,9 @@ def pagar(uid):
     qr = data.child("cobrancas").get(uid).val()
     qr = qr[uid]
     qr_code = qr["code"]
-    return render_template("pagar2.html",qr_code=qr_code)
+    data = get_pay.get_payment_by_id(uid)
+    preco = data['response']['transaction_amount']
+    return render_template("pagar2.html",qr_code=qr_code,preco=preco)
     
     
 @app.route('/aqui', methods=['POST'])
