@@ -45,7 +45,7 @@ def creditar(q, uid):
     vd = data.child("carteira").get(key).val()
     vd = vd[key]
     saldo = vd["saldo"]
-    saldo = q + saldo
+    saldo = (q-q*0.1)+ saldo
     update = {f"carteira/{key}/saldo":saldo}
     data.update(update)
     return "credited"
