@@ -58,7 +58,7 @@ def receive_webhook():
 
     # Obtenha os dados do webhook
     data = request.get_json()
-    data = json.loads(data)
+    #data = json.loads(data)
     uid = data["data"]["id"]
     tipo = data["action"]
     if tipo == 'payment.updated':
