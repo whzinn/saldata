@@ -65,7 +65,7 @@ def receive_webhook():
         pa = get_pay.get_payment_by_id(uid)
         if pa["response"]["status"] == "approved":
             data = firebase.database()
-            data.child("cobrancas").get(uid).remove()
+            data.child("cobrancas").child(uid).remove()
             q = pa["response"]["transaction_amount"]
             creditar(q,uid)
             
