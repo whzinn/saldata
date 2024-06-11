@@ -97,12 +97,14 @@ def login():
 
 @app.route('/inicio/<user>')
 def inicio(user):
-    
-    saldo = data.child("carteira").get(user).val()
-        
-    saldo = saldo[user]
-    saldo = saldo["saldo"]
-    return render_template("inicio.html",saldo=saldo,user=user)
+    try:
+      saldo = data.child("carteira").get(user).val()   
+      saldo = saldo[user]
+      saldo = saldo["saldo"]
+      return render_template("inicio.html",saldo=saldo,user=user)
+    except:
+      return render_template("404.html")
+      
     
 @app.route('/enviar')
 def enviar():
