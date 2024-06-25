@@ -89,7 +89,7 @@ def login():
         hash_sha2 = hashlib.sha256(user.encode('utf-8')).hexdigest()
         return f'''<script>
   // Redirecionando para https://www.exemplo.com
-  window.location.href = "https://anonpay2-0.onrender.com/inicio/{hash_sha2}";
+  window.location.href = "/inicio/{hash_sha2}";
 </script>
 '''
     else:
