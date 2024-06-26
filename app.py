@@ -117,7 +117,7 @@ def gerar(user):
         uid = ze.pix(user,valor)
         return f'''<script>
   // Redirecionando para https://www.exemplo.com
-  window.location.href = "https://anonpay2-0.onrender.com/forma/{uid}";
+  window.location.href = "/forma/{uid}";
 </script>
 '''
     return render_template("gerar.html",user=user)
