@@ -101,6 +101,7 @@ def inicio(user):
       saldo = data.child("carteira").get(user).val()   
       saldo = saldo[user]
       saldo = saldo["saldo"]
+      saldo = str(saldo)
       saldo = saldo[:3]
       
       return render_template("inicio.html",saldo=saldo,user=user)
