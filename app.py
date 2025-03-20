@@ -73,7 +73,12 @@ def receive_webhook():
     # Retorne uma resposta
     return jsonify({"success": True})
 
-    
+
+@app.route("/criar", methods=["POST"])
+def criar():
+  render_template("criar.html")
+
+
 @app.route("/login", methods=["POST"])
 def login():
     if request.method == "POST":
