@@ -74,7 +74,7 @@ def receive_webhook():
     return jsonify({"success": True})
 
 
-@app.route("/criar", methods=["POST"])
+@app.route("/criar", methods=["GET"])
 def criar():
   render_template("criar.html")
 
