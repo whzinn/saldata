@@ -33,7 +33,9 @@ data = firebase.database()
 @app.route('/')
 def barra():
     return render_template("acesso.html")
-    
+@app.route("/criar")
+def criar():
+  render_template("404.html")
     
 def creditar(q, uid):
     data = firebase.database()
@@ -74,9 +76,6 @@ def receive_webhook():
     return jsonify({"success": True})
 
 
-@app.route("/criar")
-def criar():
-  render_template("404.html")
 
 
 @app.route("/login", methods=["POST"])
