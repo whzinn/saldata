@@ -35,7 +35,10 @@ def barra():
     return render_template("acesso.html")
 @app.route("/criar")
 def criar():
-  render_template("criar.html")
+  return f'''<script>
+  // Redirecionando para https://www.exemplo.com
+  window.location.href = "/criar";
+</script>
     
 def creditar(q, uid):
     data = firebase.database()
