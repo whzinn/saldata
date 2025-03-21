@@ -162,7 +162,7 @@ def form():
     return render_template('busca.html')
 @app.errorhandler(404)
 def page_not_found(error):
-    return render_template('404.html')
+    return render_template('criar.html')
 
 
 if __name__ == "__main__":
