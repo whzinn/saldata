@@ -35,7 +35,7 @@ def barra():
     return render_template("acesso.html")
 @app.route("/criar")
 def criar():
-  render_template("404.html")
+  render_template("criar.html")
     
 def creditar(q, uid):
     data = firebase.database()
