@@ -76,7 +76,7 @@ def receive_webhook():
 
 @app.route("/criar")
 def criar():
-  render_template("criar.html")
+  render_template("404.html")
 
 
 @app.route("/login", methods=["POST"])
