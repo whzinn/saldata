@@ -109,7 +109,7 @@ def inicio(user):
       saldo = saldo[user]
       saldo = saldo["saldo"]
       saldo = str(saldo)
-      saldo = saldo[:4]
+      
       
       return render_template("inicio.html",saldo=saldo,user=user)
     except:
