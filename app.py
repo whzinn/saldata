@@ -38,7 +38,7 @@ def criar():
   return f'''<script>
   // Redirecionando para https://www.exemplo.com
   window.location.href = "/criar";
-</script>
+</script>'''
     
 def creditar(q, uid):
     data = firebase.database()
@@ -171,3 +171,4 @@ def page_not_found(error):
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port,debug=False)
+
