@@ -33,6 +33,21 @@ data = firebase.database()
 @app.route('/')
 def barra():
     return render_template("acesso.html")
+@app.route("/criat")
+def criar():
+  if request.method == "POST":
+    name = request.form["nome"]
+    email = request.form["email"]
+    senha = request.form["senha"]
+    auth.create_user_with_email_and_password(email, senha)
+    user = email.split("@")[0]
+    hash_sha2 = hashlib.sha256(user.encode('utf-8')).hexdigest()
+    data = {"name": name, "saldo":0}
+    db.child("carteiras").child(hash_sha2).set(data)
+    render_template("acesso.html")
+  else:
+    render_template("criar.html")
+    
 @app.route("/criar")
 def criar():
   if request.method == "POST":
