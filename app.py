@@ -34,7 +34,7 @@ data = firebase.database()
 def barra():
     return render_template("acesso.html")
 @app.route("/criat")
-def criar():
+def criat():
   if request.method == "POST":
     name = request.form["nome"]
     email = request.form["email"]
