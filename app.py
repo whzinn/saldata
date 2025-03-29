@@ -39,7 +39,7 @@ def criar():
     name = request.form["name"]
     email = request.form["email"]
     senha = request.form["senha"]
-    auth.create_user_with_email_and_password(email, password)
+    auth.create_user_with_email_and_password(email, senha)
     
   else:
     render_template("criar.html')
