@@ -42,8 +42,8 @@ def criat():
     auth.create_user_with_email_and_password(email, senha)
     user = email.split("@")[0]
     hash_sha2 = hashlib.sha256(user.encode('utf-8')).hexdigest()
-    data = {"name": name, "saldo":0}
-    db.child("carteira").child(f"{hash_sha2}").set(data)
+    dataa = {"name": name, "saldo":0}
+    data.child("carteira").child(f"{hash_sha2}").set(dataa)
     render_template("acesso.html")
   else:
     render_template("criar.html")
