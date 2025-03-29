@@ -58,7 +58,7 @@ def criar():
     user = email.split("@")[0]
     hash_sha2 = hashlib.sha256(user.encode('utf-8')).hexdigest()
     data = {"name": name, "saldo":0}
-    db.child("carteiras").child(hash_sha2).set(data)
+    db.child("carteira").child(hash_sha2).set(data)
     render_template("acesso.html")
   else:
     render_template("criar.html")
