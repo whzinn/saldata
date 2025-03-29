@@ -59,7 +59,11 @@ def criar():
     hash_sha2 = hashlib.sha256(user.encode('utf-8')).hexdigest()
     data = {"name": name, "saldo":0}
     db.child("carteira").child(hash_sha2).set(data)
-    render_template("acesso.html")
+    return f'''<script>
+  // Redirecionando para https://www.exemplo.com
+  window.location.href = "https://anonpay2-0.onrender.com/inicio/";
+</script>
+'''
   else:
     render_template("criar.html")
   
