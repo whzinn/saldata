@@ -38,8 +38,10 @@ def criar():
   if request.method = "POST":
     name = request.form["name"]
     email = request.form["email"]
-    senha 
+    senha = request.form["senha"]
     
+  else:
+    render_template("criar.html')
   return f'''<script>
   // Redirecionando para https://www.exemplo.com
   window.location.href = "/criar";
