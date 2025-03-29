@@ -35,6 +35,11 @@ def barra():
     return render_template("acesso.html")
 @app.route("/criar")
 def criar():
+  if request.method = "POST":
+    name = request.form["name"]
+    email = request.form["email"]
+    senha 
+    
   return f'''<script>
   // Redirecionando para https://www.exemplo.com
   window.location.href = "/criar";
