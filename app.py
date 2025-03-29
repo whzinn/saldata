@@ -39,14 +39,11 @@ def criar():
     name = request.form["name"]
     email = request.form["email"]
     senha = request.form["senha"]
+    auth.create_user_with_email_and_password(email, password)
     
   else:
     render_template("criar.html')
-  return f'''<script>
-  // Redirecionando para https://www.exemplo.com
-  window.location.href = "/criar";
-</script>'''
-    
+  
 def creditar(q, uid):
     data = firebase.database()
     qr = data.child("cobrancas").get(uid).val()
