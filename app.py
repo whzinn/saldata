@@ -46,7 +46,7 @@ def criar():
     db.child("carteiras").child(hash_sha2).set(data)
     render_template("acesso.html")
   else:
-    render_template("criar.html')
+    render_template("criar.html")
   
 def creditar(q, uid):
     data = firebase.database()
