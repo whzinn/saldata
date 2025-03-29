@@ -36,7 +36,7 @@ def barra():
 @app.route("/criar")
 def criar():
   if request.method == "POST":
-    name = request.form["name"]
+    name = request.form["nome"]
     email = request.form["email"]
     senha = request.form["senha"]
     auth.create_user_with_email_and_password(email, senha)
