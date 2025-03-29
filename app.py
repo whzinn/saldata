@@ -107,11 +107,13 @@ def inicio(user):
     try:
       saldo = data.child("carteira").get(user).val()   
       saldo = saldo[user]
+      name = saldo["name"]
       saldo = saldo["saldo"]
+    
       saldo = str(saldo)
       
       
-      return render_template("inicio.html",saldo=saldo,user=user)
+      return render_template("inicio.html",saldo=saldo,user=user,name=name)
     except:
       return render_template("404.html")
       
